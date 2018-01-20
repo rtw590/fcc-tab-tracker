@@ -31,13 +31,12 @@
 
 <script>
 export default {
-    methods:  {
-        navigateTo  (route)  {
-            this.$router.push(route)
-        }
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
     }
+  }
 }
-
 </script>
 
 <style scoped>
@@ -48,6 +47,4 @@ export default {
 .home:hover   {
     color: black;
 }
-
-
 </style>
