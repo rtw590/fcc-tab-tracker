@@ -5,7 +5,7 @@
       <panel title="Songs">
         <div 
           v-for="song in songs" 
-          :key="song.title">
+          :key="song.id">
           {{song.title}} -
           {{song.artist}} -
           {{song.album}}
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import songsService from '@/services/SongsService'
+import SongsService from '@/services/SongsService'
 import Panel from '@/components/Panel'
 export default {
   components: {
@@ -30,8 +30,8 @@ export default {
     }
   },
   async mounted () {
-    //request backnd for all the songs
-    this.songs = await SongsService.index()
+    //  request backnd for all the songs
+    this.songs = (await SongsService.index()).data
   }
 }
 </script>
