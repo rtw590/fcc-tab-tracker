@@ -3,6 +3,17 @@
   <v-layout coulmn>
     <v-flex xs6 offset-xs3>
       <panel title="Songs">
+        <v-btn class="cyan accent-1"
+          slot="action"
+          @click="navigateTo({name: 'songs-create'})"
+          light
+          small
+          absolute
+          right
+          middle
+          fab>
+          <v-icon>add</v-icon>
+        </v-btn>
         <div 
           v-for="song in songs" 
           :key="song.id">
@@ -27,6 +38,11 @@ export default {
   data () {
     return {
       songs: null
+    }
+  },
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
     }
   },
   async mounted () {

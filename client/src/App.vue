@@ -35,7 +35,9 @@ export default {
   margin-top: 60px;
 }
 
-
+.danger-alert {
+  color: red;
+}
 
 
 </style>
