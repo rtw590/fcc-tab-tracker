@@ -2,24 +2,18 @@
     <div>
         <v-layout>
             <v-flex xs6>
-                <panel title="Song Metadata">
-                <v-layout>
-                    <v-flex xs6>
-                        <div class="song-title">
-                            {{song.title}}
-                        </div>
-                        <div class="song-artist">
-                            {{song.artist}}
-                        </div>
-                        <div class="song-genre">
-                            {{song.genre}}
-                        </div>
+                <song-metadata :song="song" />
             </v-flex>
+
+            <v-flex xs6 class="ml-2">
+                <you-tube :youtubeId="song.youtubeId" />
+            </v-flex>
+        </v-layout>
                 
-                <v-flex xs6>
+                <!-- <v-flex xs6>
                 <img :src="song.albumImageUrl" alt="" class="album-image" />
                 <br>
-                {{song.album}}
+                song.album
                 </v-flex>
             </v-layout>
                 </panel>
@@ -51,11 +45,13 @@
                     ></textarea>
                 </panel>
             </v-flex>
-        </v-layout>
+        </v-layout> -->
     </div>
 </template>
 
 <script>
+import SongMetadata from './SongMetadata'
+import YouTube from './YouTube'
 import SongsService from '@/services/SongsService'
 import Panel from '@/components/Panel'
 
@@ -70,7 +66,9 @@ export default {
         this.song = (await SongsService.show(songId)).data
     },
     components: {
-        Panel
+        Panel,
+        SongMetadata,
+        YouTube
     }
 }
 </script>
