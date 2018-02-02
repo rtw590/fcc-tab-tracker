@@ -107,12 +107,12 @@ export default {
           this.error = 'Please fill in all fields'
           return
         }
+      
         const songId = this.$store.state.route.params.songId
-
         try {
           await SongsService.put(this.song)
           this.$router.push({
-            name: 'songs',
+            name: 'song',
             params: {
               songId: songId
             }
