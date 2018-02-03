@@ -12,7 +12,7 @@
           type="password"
           v-model="password"
         ></v-text-field>
-        <div class="error" v-html='error' />
+        <div class="danger-alert" v-html='error' />
         <v-btn
           dark
           class="cyan"
@@ -52,12 +52,4 @@ export default {
 </script>
 
 <style scoped>
-
-.error  {
-  color: red;
-}
-
-
-
-
 </style>
